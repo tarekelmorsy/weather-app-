@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chauthai.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/favorite_container"
+    app:dragEdge="right"
+    app:mode="same_level"
+    android:layout_marginEnd="10dp"
+    android:layout_marginStart="10dp"
+     android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:gravity="center|right"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_icon"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_delete_24" />
+
+    </LinearLayout>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/bg_itme_favorit"
+    android:layout_height="wrap_content">
+    <com.github.matteobattilana.weather.WeatherView
+        android:id="@+id/weather_view_favorite"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tvTempFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/family_semi_round_medium"
+        android:text="20°C"
+        android:textColor="#FCE1DA"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/imIconFv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCurrentFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="egypt"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:textColor="#FCE1DA"
+        android:textSize="20sp"
+        android:fontFamily="@font/family_semi_round_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTempFav" />
+
+    <TextView
+        android:id="@+id/tvCityFv"
+        android:layout_marginStart="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dumata"
+        android:textColor="#777676"
+        android:textSize="10sp"
+        android:fontFamily="@font/family_semi_round_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCurrentFav" />
+
+    <ImageView
+        android:id="@+id/imIconFv"
+        android:layout_width="60dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvCurrentFav"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/drop" />
+
+    <LinearLayout
+        android:id="@+id/container1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="6"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCityFv">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_weight="1"
+            android:src="@drawable/drop_icon" />
+
+        <TextView
+            android:id="@+id/tv_humidityFv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="79%"
+            android:layout_marginStart="10dp"
+            android:textColor="#777676"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_air_24" />
+
+        <TextView
+            android:id="@+id/tv_windFv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="2m/s"
+            android:layout_marginStart="10dp"
+            android:textColor="#777676"
+            />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.chauthai.swipereveallayout.SwipeRevealLayout>

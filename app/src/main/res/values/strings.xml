@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name" >        Weather         </string>
+
+    <string name="title_home">Home</string>
+    <string name="title_Favorites">Favorites</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="search">Search</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="save">Save</string>
+    <string name="language">Language</string>
+    <string name="arabic">arabic</string>
+    <string name="english">english</string>
+    <string name="location">Location</string>
+    <string name="temperature">Temperature</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="disable">Disable</string>
+    <string name="notification">Notification</string>
+    <string name="gps">Gps</string>
+    <string name="meter_sec">Meter/Sec</string>
+    <string name="mile_hour">Mile/Hour</string>
+    <string name="celsius">Celsius</string>
+    <string name="kelvin">Kelvin</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="enable">Enable</string>
+
+    <string name="saturday">Sat</string>
+    <string name="sunday">Sun</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="setting">Setting</string>
+    <string name="please_enter_city">please enter city</string>
+
+    <string name="notification_schedule_title">Schedule notification:\u00a0</string>
+    <string name="notification_schedule_pattern"> dd/MM/yy HH:mm</string>
+    <string name="notification_schedule_pattern_date"> dd/MM/yy  </string>
+    <string name="notification_schedule_pattern_time">  HH:mm</string>
+
+    <string name="notification_schedule_error">
+        Schedule notification: Incorrect Date and Time
+    </string>
+    <string name="to">To</string>
+    <string name="from">from</string>
+    <string name="map">Map</string>
+    <string name="cancel">CANCEL</string>
+    <string name="address">"address:  "</string>
+    <string name="latitude">latitude: </string>
+    <string name="longitude">longitude: </string>
+    <string name="save_this_location">save this location</string>
+    <string name="choose_location">Choose Location</string>
+    <string name="alert_weather">Alert weather</string>
+    <string name="alert_weather_ar">تنبيه الطقس</string>
+
+    <string name="massage_notifications">Weather is fine,no alert for the scheduled time period</string>
+    <string name="massage_notifications_ar">الطقس جيد ، لا يوجد تنبيه للفترة الزمنية المحددة</string>
+    <string name="notification_is_disable">" notification is disable"</string>
+    <string name="are_you_sure">Are You Sure?</string>
+    <string name="delete_data">Delete data cant be Undo.</string>
+    <string name="delete">Delete </string>
+    <string name="cancle">Cancel  </string>
+    <string name="canclled">Cancelled</string>
+    <string name="turnOn">Please turn on your location...</string>
+
+
+</resources>

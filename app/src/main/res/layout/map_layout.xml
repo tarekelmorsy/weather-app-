@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="@string/save_this_location"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/family_semi_round_medium"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textColor="@color/bg_api"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:maxLines="1"
+        android:id="@+id/tvNameCity"
+        android:layout_width="match_parent"
+        android:text="ciro"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/family_semi_round_medium"
+        android:textSize="17sp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:textColor="@color/bg_api2"
+        android:layout_height="wrap_content"
+         android:autoSizeMaxTextSize="18sp"
+        android:autoSizeMinTextSize="11sp"
+        android:autoSizeStepGranularity=".5sp"
+        android:autoSizeTextType="uniform"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/latLongCity"
+        android:layout_width="match_parent"
+        android:text="ciro"
+        android:maxLines="2"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/family_semi_round_medium"
+        android:textSize="17sp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:textColor="@color/bg_api2"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="18sp"
+        android:autoSizeMinTextSize="11sp"
+        android:autoSizeStepGranularity=".5sp"
+        android:autoSizeTextType="uniform"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/bt_cancle"
+            android:layout_width="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_cancle"
+            android:text="@string/cancel"
+            android:gravity="center"
+            android:fontFamily="@font/family_semi_round_medium"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/bt_save"
+            android:layout_width="0dp"
+            android:textSize="25sp"
+            android:fontFamily="@font/family_semi_round_medium"
+            android:text="@string/save"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_icon"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+</LinearLayout>

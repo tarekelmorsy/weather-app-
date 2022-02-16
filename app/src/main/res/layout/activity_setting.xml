@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_api2"
+    tools:context=".prsentation.weather.setting.SettingActivity">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:background="@color/bg_api2"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/containerLangu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_langu"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/la"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/family_semi_round_bold"
+            android:gravity="center"
+            android:text="@string/language"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/tv_ar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/family_semi_round_bold"
+                    android:gravity="center"
+                    android:text="@string/arabic"
+                    android:textColor="#334756"
+                    android:textSize="20dp"
+                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <RadioButton
+                    android:checked="true"
+                    android:id="@+id/tv_eg"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                     android:fontFamily="@font/family_semi_round_bold"
+                    android:gravity="center"
+                    android:text="@string/english"
+                    android:textSize="20dp"
+                    android:textColor="#334756"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                  />
+            </RadioGroup>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerLangu">
+
+        <TextView
+            android:id="@+id/tv_title_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/family_semi_round_bold"
+            android:gravity="center"
+            android:text="@string/location"
+            android:textColor="@color/bg_api"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_title_wind"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/family_semi_round_bold"
+            android:gravity="center"
+            android:text="@string/wind_speed"
+            android:textColor="#BBB6C5"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_title_temp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/family_semi_round_bold"
+            android:gravity="center"
+            android:text="@string/temperature"
+            android:textColor="#BBB6C5"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_api"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_api"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <RadioGroup
+            android:visibility="visible"
+            android:id="@+id/radioGroupLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/tvGps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="100dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/family_semi_round_bold"
+                android:paddingStart="20dp"
+                android:paddingBottom="5dp"
+                android:text="@string/location"
+                android:textColor="#FCE1DA"
+                android:textSize="20dp" />
+            <RadioButton
+                android:id="@+id/tvMap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="100dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/family_semi_round_bold"
+                android:paddingStart="20dp"
+                android:paddingBottom="5dp"
+                android:text="@string/map"
+                android:textColor="#FCE1DA"
+                android:textSize="20dp" />
+
+
+            <RadioButton
+                android:id="@+id/tcSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/family_semi_round_bold"
+                android:paddingStart="20dp"
+                android:paddingBottom="5dp"
+                android:text="@string/search"
+                android:textColor="#FCE1DA"
+                android:textSize="20dp" />
+
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:visibility="gone"
+            android:id="@+id/radioGroupWind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/tvSec"
+                android:checked="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="100dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/family_semi_round_bold"
+                android:paddingStart="20dp"
+                android:paddingBottom="5dp"
+                android:text="@string/meter_sec"
+                android:textColor="#D2BBC5"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:id="@+id/tvHour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/family_semi_round_bold"
+                android:paddingStart="20dp"
+                android:paddingBottom="5dp"
+                android:text="@string/mile_hour"
+                android:textColor="#D2BBC5"
+                android:textSize="20dp" />
+
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroupTemp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/rbCelsius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="100dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/family_semi_round_bold"
+                android:paddingStart="20dp"
+                android:paddingBottom="5dp"
+                android:text="@string/celsius"
+                android:textColor="#D2BBC5"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:id="@+id/rbKelvin"
+                android:checked="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/family_semi_round_bold"
+                android:paddingStart="20dp"
+                android:paddingBottom="5dp"
+                android:text="@string/kelvin"
+                android:textColor="#D2BBC5"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:id="@+id/rbFahrenheit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/family_semi_round_bold"
+                android:paddingStart="20dp"
+                android:paddingBottom="5dp"
+                android:text="@string/fahrenheit"
+                android:textColor="#D2BBC5"
+                android:textSize="20dp" />
+        </RadioGroup>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/containerNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/bg_notification"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_api">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/family_semi_round_bold"
+            android:gravity="center"
+            android:text="@string/notification"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/family_semi_round_bold"
+                    android:gravity="center"
+                    android:text="@string/enable"
+                    android:textColor="#334756"
+                    android:checked="true"
+                    android:id="@+id/notification_enable"
+                     android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/notification_disable"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/family_semi_round_bold"
+                    android:gravity="center"
+                    android:text="@string/disable"
+                    android:textColor="#334756"
+                     android:textSize="20dp" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

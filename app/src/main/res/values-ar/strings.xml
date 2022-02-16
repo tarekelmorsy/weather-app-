@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">الطقس</string>
+
+    <string name="title_home">الرئيسية</string>
+    <string name="title_Favorites">المفضلة</string>
+    <string name="title_notifications">الاشعارات</string>
+    <string name="search">البحث</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="save">حفظ</string>
+    <string name="language">اللغة </string>
+    <string name="arabic">العربية</string>
+    <string name="english">الانجليزية</string>
+    <string name="location">الموقع</string>
+    <string name="temperature">درجة الحرارة</string>
+    <string name="wind_speed">سرعة الرياح</string>
+    <string name="disable">تعطيل </string>
+    <string name="notification">الاشعارات </string>
+    <string name="gps">الموقع</string>
+    <string name="meter_sec">ثانية /متر</string>
+    <string name="mile_hour">ساعة/ميل</string>
+    <string name="celsius">كليسيس</string>
+    <string name="kelvin">كلفن</string>
+    <string name="fahrenheit">فهرنهيت</string>
+    <string name="enable">تفعيل</string>
+
+    <string name="saturday">السبت</string>
+    <string name="sunday">الاحد</string>
+    <string name="monday">الاثنان</string>
+    <string name="tuesday">الثلاثاء</string>
+    <string name="wednesday">الاربعاء</string>
+    <string name="thursday">الخميس</string>
+    <string name="friday">الجمعة</string>
+    <string name="setting">الضبط</string>
+    <string name="please_enter_city">من فضلك ادخل المدينة</string>
+
+    <string name="notification_schedule_title">جدول الاشعار :\u00a0</string>
+    <string name="notification_schedule_pattern">dd.MM.yy \u00B7 HH:mm</string>
+    <string name="notification_schedule_error">
+التاريخ والوقت غير صحيحين    </string>
+    <string name="notification_schedule_pattern_date"> dd/MM/yy  </string>
+    <string name="notification_schedule_pattern_time">  HH:mm</string>
+     <string name="to">الي</string>
+    <string name="from">من</string>
+    <string name="map">الخريطة</string>
+    <string name="cancel">الغاء</string>
+    <string name="address">"العنوان: "</string>
+    <string name="latitude">خط العرض: </string>
+    <string name="longitude">خط الطول: </string>
+    <string name="save_this_location">حفظ هذا الموقع </string>
+    <string name="choose_location">اختر الموقع</string>
+     <string name="alert_weather">Alert weather</string>
+    <string name="alert_weather_ar">تنبيه الطقس</string>
+    <string name="massage_notifications">الطقس جيد ، لا يوجد تنبيه للفترة الزمنية المحددة</string>
+
+    <string name="massage_notifications_ar">الطقس جيد ، لا يوجد تنبيه للفترة الزمنية المحددة</string>
+
+    <string name="notification_is_disable">الاشعارات معطلة</string>
+
+    <string name="are_you_sure">هل أنت متاكد?</string>
+    <string name="delete_data">حذف البيانات لا يمكن التراجع عنه.</string>
+    <string name="delete">حذف </string>
+    <string name="cancle">الغاء  </string>
+    <string name="canclled">تم الالغاء</string>
+    <string name="turnOn">من فضلك افتح الموقع...</string>
+
+
+</resources>

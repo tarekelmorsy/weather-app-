@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item
+        android:fontFamily="@font/family_semi_round_medium"
+        android:id="@+id/setting"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/setting" />
+
+</menu>

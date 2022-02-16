@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFBF5"
+    tools:context=".prsentation.weather.view.ui.home.HomeFragment">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:background="#17181C"
+
+    android:layout_height="match_parent">
+    <com.github.matteobattilana.weather.WeatherView
+        android:id="@+id/weather_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/ivWeather"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTitleTemp"
+        app:layout_constraintTop_toBottomOf="@+id/ivWeather"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+         />
+    <LinearLayout
+        android:id="@+id/container1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="6"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:src="@drawable/drop_icon"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvHumidity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="esfsedfsd"
+            android:textColor="@color/text" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:src="@drawable/pressure_icon"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_pressure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="esfsedfsd"
+            android:textColor="@color/text" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_air_24"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvWind"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="esfsedfsd"
+            android:textColor="@color/text" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/container2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container1">
+
+       <ImageView
+           android:layout_width="0dp"
+           android:layout_height="25dp"
+           android:src="@drawable/ic_cloud_24"
+           android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvCloud"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="esfsedfsd"
+            android:textColor="@color/text" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_eye_24"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_visibility"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="esfsedfsd"
+            android:textColor="@color/text" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_alarms_24"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_uvi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="esfsedfsd"
+            android:textColor="@color/text" />
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reHour"
+         android:layout_marginStart="20dp"
+        android:background="@drawable/bg_hour1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reDays"
+        tools:listitem="@layout/itme_days"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reHour" />
+
+    <TextView
+        android:id="@+id/tvCurrentName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/family_semi_round_bold"
+        android:text="egypt"
+        android:textColor="@color/text"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/ivWeather"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitleTemp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/family_semi_round_medium"
+        android:text="60"
+        android:textColor="@color/text"
+        android:textSize="60sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/ivWeather"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCurrentName" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_description"
+        android:fontFamily="@font/family_semi_round_bold"
+        android:paddingStart="10dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="5dp"
+        android:text="clear sky"
+        android:textColor="@color/text"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/ivWeather"
+        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleTemp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
