@@ -67,6 +67,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             val markerOptions=MarkerOptions()
 
             markerOptions.position(latLong)
+
             markerOptions.title("${latLong.latitude} : ${latLong.longitude}")
             mMap.clear()
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLong,10f))
@@ -87,8 +88,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             val btSave = view.findViewById<Button>(R.id.bt_save)
             tvNameCity.text=getString(R.string.address)+"${address?.get(0)?.getAddressLine(0)}"
 
-
-            latLongCity.text=getString(R.string.latitude)+"${latLong.longitude}\n"+getString(R.string.longitude)+"${latLong.longitude}"
+            latLongCity.text=getString(R.string.latitude)+"${latLong.latitude}\n"+getString(R.string.longitude)+"${latLong.longitude}"
             btCancle.setOnClickListener {
                 dialog.dismiss()
 
