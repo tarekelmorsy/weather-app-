@@ -14,9 +14,8 @@ import com.example.weatherapp.prsentation.weather.view.ui.notifications.ModelAla
 import com.mcit.kmvvm.repo.WeatherRepo
 import kotlinx.coroutines.launch
 
-class FavoriteViewModel (application: Application): AndroidViewModel(application) {
-       var currentWeatherLiveData = MutableLiveData<CurrentWeather>()
-     //  var  currentWeatherLiveData = _currentWeatherLiveData
+class FavoriteViewModel(application: Application) : AndroidViewModel(application) {
+    var currentWeatherLiveData = MutableLiveData<CurrentWeather>()
 
     private val repo = WeatherRepo()
 
@@ -24,7 +23,7 @@ class FavoriteViewModel (application: Application): AndroidViewModel(application
     val allFavorite: LiveData<List<ModelFavorite>>
 
     init {
-        val favoriteDao =  FavoriteDatabase.getInstance(application).favoriteDao()
+        val favoriteDao = FavoriteDatabase.getInstance(application).favoriteDao()
         repository = FavoriteRepository(favoriteDao)
         allFavorite = repository.allFavorite
     }
@@ -32,11 +31,13 @@ class FavoriteViewModel (application: Application): AndroidViewModel(application
     fun insert(favorite: ModelFavorite) = viewModelScope.launch {
         repository.insertFavorite(favorite)
     }
+
     fun deleteAllFavorite() {
         viewModelScope.launch {
             repository.deleteAllFavorite()
         }
     }
+
     fun deleteFavorite(favorite: ModelFavorite) {
         viewModelScope.launch {
             repository.deleteFavorite(favorite)
@@ -44,12 +45,11 @@ class FavoriteViewModel (application: Application): AndroidViewModel(application
     }
 
 
-    fun getCurrentWeather(lat:Double,lon:Double,units:String,lang:String) {
+    fun getCurrentWeather(lat: Double, lon: Double, units: String, lang: String) {
 
 
-
-            repo.getCurrentWeather(lat, lon, units, lang)
-            currentWeatherLiveData = repo.currentWeatherLiveData
+        repo.getCurrentWeather(lat, lon, units, lang)
+        currentWeatherLiveData = repo.currentWeatherLiveData
 
 
     }

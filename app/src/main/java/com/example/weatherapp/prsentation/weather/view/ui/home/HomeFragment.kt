@@ -51,22 +51,14 @@ class HomeFragment : Fragment() {
     private var binding: FragmentHomeBinding? = null
     lateinit var weather: PrecipType
     var placeFields: List<Place.Field>? = null
-    var PERMISSION_ID = 44
     val STARTKEY = 100
-    var latitude = 0.0
-    var longitude = 0.0
-
     private lateinit var adapterHours: AdapterHours
     private lateinit var adapterDays: AdapterDays
-    private lateinit var sharedPreferences: SharedPreferences
     var weatherSpeed = 0
     var lat: Double = 0.0
     var long: Double = 0.0
     var weatherParticles = 0f
-
     var mFusedLocationClient: FusedLocationProviderClient? = null
-
-
     var locationRequest: LocationRequest? = null
 
     var locationCallback: LocationCallback = object : LocationCallback() {
@@ -77,6 +69,7 @@ class HomeFragment : Fragment() {
             }
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -93,7 +86,6 @@ class HomeFragment : Fragment() {
             viewModel = ViewModelProvider(it).get(WeatherViewModel::class.java)
 
 
-
         }
 
         binding = FragmentHomeBinding.inflate(inflater)
@@ -108,12 +100,12 @@ class HomeFragment : Fragment() {
         binding?.reDays?.adapter = adapterDays
 
 
-            //location init
-            mFusedLocationClient = LocationServices.getFusedLocationProviderClient(activity!!)
-            locationRequest = LocationRequest.create()
-            locationRequest!!.interval = 2000
-            locationRequest!!.fastestInterval = 1000
-            locationRequest!!.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+        //location init
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(activity!!)
+        locationRequest = LocationRequest.create()
+        locationRequest!!.interval = 2000
+        locationRequest!!.fastestInterval = 1000
+        locationRequest!!.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
 
 
         return binding?.root
@@ -148,24 +140,23 @@ class HomeFragment : Fragment() {
             binding?.tvUvi?.text = "${it.current.uvi}"
 
 
-            if(it.current.weather.get(0).main.equals("Rain")){
+            if (it.current.weather.get(0).main.equals("Rain")) {
                 weather = PrecipType.RAIN
-                 weatherParticles = 60f
+                weatherParticles = 60f
                 weatherSpeed = 600
 
-            }else if(it.current.weather.get(0).main.equals("Snow")	){
+            } else if (it.current.weather.get(0).main.equals("Snow")) {
                 weather = PrecipType.SNOW
-                 weatherParticles = 10f
+                weatherParticles = 10f
                 weatherSpeed = 200
-            }else
-            {
+            } else {
                 weather = PrecipType.CLEAR
 
             }
 
 
-             binding?.weatherView?.apply {
-                 setWeatherData(weather)
+            binding?.weatherView?.apply {
+                setWeatherData(weather)
                 speed = weatherSpeed // How fast
                 emissionRate = weatherParticles // How many particles
                 angle = 0 // The angle of the fall
@@ -226,11 +217,12 @@ class HomeFragment : Fragment() {
 
             }
 
-            if (it!=null) {
+            if (it != null) {
                 binding?.tvCurrentName?.text = it.name
                 binding?.tvDescription?.text = it.weather[0].description
                 binding?.tvTitleTemp?.text = "${it.main.temp.toInt()}°C"
-            } })
+            }
+        })
         viewModel.windWeatherLiveData.observe(viewLifecycleOwner, Observer {
             if (sharedPreferences.getString(WIND, "").equals("imperial"))
                 binding?.tvWind?.text = "${it.current.wind_gust.toInt()}m/h"
@@ -247,8 +239,8 @@ class HomeFragment : Fragment() {
             "sharedPrefFile",
             Context.MODE_PRIVATE
         )
-          lat = sharedPreferences.getFloat(LAt, -1f).toDouble()
-          long = sharedPreferences.getFloat(LONG, -1f).toDouble()
+        lat = sharedPreferences.getFloat(LAt, -1f).toDouble()
+        long = sharedPreferences.getFloat(LONG, -1f).toDouble()
         val temp = sharedPreferences.getString(TEMP, "")
         val wind = sharedPreferences.getString(WIND, "")
         val language = sharedPreferences.getString(LANGUAGE, "")
@@ -257,12 +249,13 @@ class HomeFragment : Fragment() {
         Log.d("TAG", "initViews: " + lat)
         Log.d("TAG", "temp: " + temp)
 
-        if (temp != null&&language!=null) {
-            viewModel.getWeather(lat, long, temp,language)
-            viewModel.getDaysWeather(lat, long, "hourly",language)
+        if (temp != null && language != null) {
+            viewModel.getWeather(lat, long, temp, language)
+            viewModel.getDaysWeather(lat, long, "hourly", language)
             activity?.let { it1 ->
-            viewModel.getCurrentWeather(lat, long, temp, language,it1)}
-            wind?.let { viewModel.getWindWeather(lat, long, it,language) }
+                viewModel.getCurrentWeather(lat, long, temp, language, it1)
+            }
+            wind?.let { viewModel.getWindWeather(lat, long, it, language) }
 
         }
 
@@ -283,7 +276,7 @@ class HomeFragment : Fragment() {
             editor.putFloat(LAt, lat.toFloat())
             editor.putFloat(LONG, long.toFloat())
             editor.putInt(LOCATIONCLICK, 2)
-            editor.putInt(CHOOSE,1)
+            editor.putInt(CHOOSE, 1)
             editor.apply()
             editor.commit()
             Log.d("TAG", "onActivityResult: " + lat)
@@ -292,7 +285,7 @@ class HomeFragment : Fragment() {
 
         } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
             val status = Autocomplete.getStatusFromIntent(data)
-            Toast.makeText(activity!!, status.statusMessage, Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireActivity(), status.statusMessage, Toast.LENGTH_SHORT).show()
         }
     }
 

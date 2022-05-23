@@ -6,6 +6,9 @@ import android.net.*
 import android.os.Build
 import androidx.lifecycle.LiveData
 
+/**
+ *  this class works as  check Network Connection
+ */
 class NetworkConnection (private val context: Context):LiveData<Boolean>(){
     val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 private lateinit var networkCallback:ConnectivityManager.NetworkCallback

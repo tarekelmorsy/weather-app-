@@ -6,7 +6,7 @@ const val LAt = "LAt"
 const val LONG = "LONG"
 const val WIND = "WIND"
 const val TEMP = "TEMP"
-const val LANGUCLICK  = "LANGUCLICK"
+const val LANGUCLICK = "LANGUCLICK"
 const val LOCATIONCLICK = "LOCATIONCLICK"
 const val WINDKLICK = "WINDKLICK"
 const val TEMPCLICK = "TEMPCLICK"
@@ -14,8 +14,5 @@ const val LANGUAGE = "LANGUAGE"
 const val CHOOSE = "CHOOSE"
 const val NOTIFICATION = "NOTIFICATION"
 const val LANGUAGEINT = "LANGUAGEINT"
-
-
-var ii=0
 
 

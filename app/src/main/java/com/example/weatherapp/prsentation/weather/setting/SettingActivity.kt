@@ -69,8 +69,8 @@ class SettingActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //tool bar
-        var action =supportActionBar
-        action?.title=getText(R.string.setting)
+        var action = supportActionBar
+        action?.title = getText(R.string.setting)
         //location init
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         locationRequest = LocationRequest.create()
@@ -82,14 +82,13 @@ class SettingActivity : AppCompatActivity() {
             this.getSharedPreferences("sharedPrefFile", Context.MODE_PRIVATE)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
 
-         val language: Int = sharedPreferences.getInt(LANGUCLICK, 0)
+        val language: Int = sharedPreferences.getInt(LANGUCLICK, 0)
         val windClick: Int = sharedPreferences.getInt(WINDKLICK, 0)
         val tempClick: Int = sharedPreferences.getInt(TEMPCLICK, 0)
         val notification: Int = sharedPreferences.getInt(NOTIFICATION, 0)
 
 
-        ii=0
-//handle  language checked
+        //handle  language checked
         if (language.equals(1)) {
             binding.tvAr.isChecked = true
             binding.tvEg.isChecked = false
@@ -99,7 +98,7 @@ class SettingActivity : AppCompatActivity() {
             binding.tvAr.isChecked = false
 
         }
-//handle  windClicked
+        //handle  windClicked
         if (windClick.equals(1)) {
             binding.tvSec.isChecked = true
             binding.tvHour.isChecked = false
@@ -109,7 +108,7 @@ class SettingActivity : AppCompatActivity() {
             binding.tvSec.isChecked = false
 
         }
-//handle Temp clicked
+        //handle Temp clicked
         if (tempClick.equals(1)) {
             binding.rbCelsius.isChecked = true
             binding.rbKelvin.isChecked = false
@@ -131,15 +130,15 @@ class SettingActivity : AppCompatActivity() {
             binding.notificationDisable.isChecked = false
 
 
-        }else if(notification.equals(2)){
+        } else if (notification.equals(2)) {
             binding.notificationEnable.isChecked = false
             binding.notificationDisable.isChecked = true
 
         }
 
-            val locationClick: Int = sharedPreferences.getInt(LOCATIONCLICK, 0)
+        val locationClick: Int = sharedPreferences.getInt(LOCATIONCLICK, 0)
 
-         if (locationClick.equals(1)) {
+        if (locationClick.equals(1)) {
             binding.tvGps.isChecked = true
             binding.tcSearch.isChecked = false
             binding.tvMap.isChecked = false
@@ -151,7 +150,7 @@ class SettingActivity : AppCompatActivity() {
             binding.tvMap.isChecked = false
 
 
-        }else if (locationClick.equals(3)) {
+        } else if (locationClick.equals(3)) {
             binding.tcSearch.isChecked = false
             binding.tvGps.isChecked = false
             binding.tvMap.isChecked = true
@@ -274,7 +273,8 @@ class SettingActivity : AppCompatActivity() {
 
         }
         binding?.notificationDisable.setOnClickListener {
-                var notificationsViewModel= ViewModelProvider(this).get(NotificationsViewModel::class.java)
+            var notificationsViewModel =
+                ViewModelProvider(this).get(NotificationsViewModel::class.java)
             notificationsViewModel.deleteAllAlarm()
             val workManager = WorkManager.getInstance()
             workManager.cancelAllWork()
@@ -467,15 +467,13 @@ class SettingActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.setting_menu,menu)
+        menuInflater.inflate(R.menu.setting_menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId)
-        {
-            R.id.back->
-            {
+        when (item.itemId) {
+            R.id.back -> {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
@@ -483,6 +481,7 @@ class SettingActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
     override fun onResume() {
         super.onResume()
         if (checkPermissions()) {

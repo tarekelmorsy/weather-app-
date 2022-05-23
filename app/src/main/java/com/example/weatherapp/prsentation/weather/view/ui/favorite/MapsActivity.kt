@@ -59,23 +59,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        // Add a marker in Sydney and move the camera
-
-
-
-        mMap.setOnMapClickListener {latLong->
-            val markerOptions=MarkerOptions()
+        mMap.setOnMapClickListener { latLong ->
+            val markerOptions = MarkerOptions()
 
             markerOptions.position(latLong)
 
             markerOptions.title("${latLong.latitude} : ${latLong.longitude}")
             mMap.clear()
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLong,10f))
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLong, 10f))
             mMap.addMarker(markerOptions)
-            val address=geocoder?.getFromLocation(latLong.latitude,latLong.longitude,1)
+            val address = geocoder?.getFromLocation(latLong.latitude, latLong.longitude, 1)
             Log.d("onMapReady", "onMapReady: ${address?.get(0)?.getAddressLine(0)}")
 
-            // show dialog
+            /* show dialog
+            this dialog show details about location
+             */
+
             val dialog = DialogPlus.newDialog(this)
                 .setContentHolder(ViewHolder(R.layout.map_layout))
                 .setExpanded(true, 700)
@@ -86,9 +85,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             val tvNameCity = view.findViewById<TextView>(R.id.tvNameCity)
             val latLongCity = view.findViewById<TextView>(R.id.latLongCity)
             val btSave = view.findViewById<Button>(R.id.bt_save)
-            tvNameCity.text=getString(R.string.address)+"${address?.get(0)?.getAddressLine(0)}"
+            tvNameCity.text = getString(R.string.address) + "${address?.get(0)?.getAddressLine(0)}"
 
-            latLongCity.text=getString(R.string.latitude)+"${latLong.latitude}\n"+getString(R.string.longitude)+"${latLong.longitude}"
+            latLongCity.text =
+                getString(R.string.latitude) + "${latLong.latitude}\n" + getString(R.string.longitude) + "${latLong.longitude}"
             btCancle.setOnClickListener {
                 dialog.dismiss()
 
@@ -97,14 +97,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 val sharedPreferences: SharedPreferences =
                     this.getSharedPreferences("sharedPrefFile", Context.MODE_PRIVATE)
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
-                editor.putFloat(LAt,latLong.latitude.toFloat())
+                editor.putFloat(LAt, latLong.latitude.toFloat())
                 editor.putFloat(LONG, latLong.longitude.toFloat())
                 editor.putInt(LOCATIONCLICK, 3)
                 editor.apply()
                 editor.commit()
                 dialog.dismiss()
                 finish()
-                Toast.makeText(this,"updated location",Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "updated location", Toast.LENGTH_LONG).show()
             }
 
         }

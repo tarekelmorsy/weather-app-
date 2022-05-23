@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.example.weatherapp.R
 import com.example.weatherapp.data.local.ModelFavorite
-import com.example.weatherapp.data.local.NetworkConnection
 import com.example.weatherapp.databinding.FragmentFavoritesBinding
 import com.example.weatherapp.prsentation.weather.view.ui.notifications.ModelAlarm
 import com.google.android.libraries.places.api.Places

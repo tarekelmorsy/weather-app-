@@ -19,12 +19,13 @@ import com.example.weatherapp.prsentation.weather.view.ui.notifications.ModelAla
 import com.github.matteobattilana.weather.PrecipType
 import java.lang.String
 
-class AdapterFavorite (var listFavorites:ArrayList<ModelFavorite>,val viewModel: FavoriteViewModel): RecyclerView.Adapter<AdapterFavorite.ViewHolder>()  {
+class AdapterFavorite(
+    var listFavorites: ArrayList<ModelFavorite>,
+    val viewModel: FavoriteViewModel
+) : RecyclerView.Adapter<AdapterFavorite.ViewHolder>() {
 
 
-
-
-    inner class ViewHolder(val view: View): RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         val tvTempFav: TextView
             get() = view.findViewById(R.id.tvTempFav)
@@ -40,30 +41,32 @@ class AdapterFavorite (var listFavorites:ArrayList<ModelFavorite>,val viewModel:
             get() = view.findViewById(R.id.tv_windFv)
         val ivDelete: ImageView
             get() = view.findViewById(R.id.ivDelete)
-
-        val swipeRefreshLayout:SwipeRefreshLayout
-            get() = view.findViewById(R.id.favorite_container)
-        val weather_view_favorite:com.github.matteobattilana.weather.WeatherView
+        val weather_view_favorite: com.github.matteobattilana.weather.WeatherView
             get() = view.findViewById(R.id.weather_view_favorite)
-
-
 
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val viwe: View = LayoutInflater.from(parent.context).inflate(R.layout.itme_favorites,parent,false)
-        return ViewHolder(viwe)    }
+        val viwe: View =
+            LayoutInflater.from(parent.context).inflate(R.layout.itme_favorites, parent, false)
+        return ViewHolder(viwe)
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-         Glide.with(holder.imIconFv.context).load("http://openweathermap.org/img/wn/${listFavorites.get(position).icon}@2x.png").into(holder.imIconFv)
+        Glide.with(holder.imIconFv.context)
+            .load("http://openweathermap.org/img/wn/${listFavorites.get(position).icon}@2x.png")
+            .into(holder.imIconFv)
 
-        holder.tvCityFv.text="${listFavorites.get(position).name}"
-        holder.tvCurrentFav.text="${listFavorites.get(position).country}"
-        holder.tvTempFav.text="${listFavorites.get(position).temp.toInt()}°C"
-        holder.tv_humidityFv.text="${listFavorites.get(position).humidity}%"
-        holder.tv_windFv.text="${listFavorites.get(position).wind.toInt()}m/s"
+        holder.apply {
+            tvCityFv.text = "${listFavorites.get(position).name}"
+            tvCurrentFav.text = "${listFavorites.get(position).country}"
+            tvTempFav.text = "${listFavorites.get(position).temp.toInt()}°C"
+            tv_humidityFv.text = "${listFavorites.get(position).humidity}%"
+            tv_windFv.text = "${listFavorites.get(position).wind.toInt()}m/s"
+
+        }
 
 
         holder.ivDelete.setOnClickListener {
@@ -95,17 +98,16 @@ class AdapterFavorite (var listFavorites:ArrayList<ModelFavorite>,val viewModel:
         lateinit var weather: PrecipType
         var weatherSpeed = 0
         var weatherParticles = 0f
-        if(listFavorites.get(position).main.equals("Rain")){
+        if (listFavorites.get(position).main.equals("Rain")) {
             weather = PrecipType.RAIN
             weatherParticles = 60f
             weatherSpeed = 600
 
-        }else if(listFavorites.get(position).main.equals("Rain")	){
+        } else if (listFavorites.get(position).main.equals("Rain")) {
             weather = PrecipType.SNOW
             weatherParticles = 10f
             weatherSpeed = 200
-        }else
-        {
+        } else {
             weather = PrecipType.CLEAR
 
         }
@@ -125,5 +127,6 @@ class AdapterFavorite (var listFavorites:ArrayList<ModelFavorite>,val viewModel:
         this.listFavorites = favorite
         notifyDataSetChanged()
     }
-    override fun getItemCount(): Int =listFavorites.size
+
+    override fun getItemCount(): Int = listFavorites.size
 }
