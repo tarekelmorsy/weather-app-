@@ -1,6 +1,6 @@
 # weather-app-
 
- weather-app- is a simple weather forecast app, which uses some APIs to fetch 7 day forecast data from the OpenWeatherMap and to fetch places,cities,counties,coords etc. from Geocoder. The main goal of this app is to be a sample of how to build an high quality Android application that uses the Architecture components. in Kotlin.  
+ weather-app- is a simple weather forecast app, which uses some APIs to fetch 7 day forecast data from the OpenWeatherMap Api and to fetch places,cities,counties,coords etc. from Geocoder  Provides Weather information (clear sky , light rain .. etc.) and weather information throughout the day , can change units, wind speed and Language can choose favorite locations using map or location or search inGoogle Place API and can add weather alert to warning about the weather 
  
 ## Requirements 
 
